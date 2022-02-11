@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { ForwardRefRenderFunction } from 'react'
 import { StyleSheet, Text, Animated } from 'react-native'
+import { getStatusBarHeight } from 'react-native-status-bar-height'
 import { window } from '../../constants/layout'
 
 export type NotificationProps = {
@@ -14,7 +15,7 @@ export type NotificationMethods = {
 }
 
 const INITIAL_TOP = -window.height
-const VISIBLE_TOP = 20
+const VISIBLE_TOP = getStatusBarHeight()
 const DURATION = 500
 
 const Notification: ForwardRefRenderFunction<NotificationMethods, NotificationProps> = (
